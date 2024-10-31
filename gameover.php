@@ -16,7 +16,7 @@ session_destroy();
 <body>
     <div class="header"><?= $result === 'win' ? 'Congratulations, You Won!' : 'Game Over - You Lost' ?></div>
     <div class="main">
-        <p><?= $result === 'win' ? 'You guessed the word correctly!' : 'Better luck next time!' ?></p>
+        <p><?= $result === 'win' ? 'You guessed the words correctly!' : 'Better luck next time!' ?></p>
     </div>
 
     <div class="bottom">

@@ -124,7 +124,7 @@ $hangmanStage = 6 - $lives;
         Level: <?= ucfirst($level) ?> - Word <?= $wordCount ?> of 6
     </div>
 
-    <div class="main">
+    <div class="main-game">
         <h1>Hangman</h1>
         <div class="hangman-image">
             <img src="img/hangman<?= $hangmanStage ?>.png" alt="Hangman Stage <?= $hangmanStage ?>" class="hangman-image">
