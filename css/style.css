@@ -82,3 +82,48 @@ div.bottom {
     height: auto;
     object-fit: contain;
 }
+
+.confetti-left {
+    position: fixed;
+    left: 0;
+    display: flex;
+  }
+  
+  .confetti-right {
+    position: fixed;
+    right: 0;
+    display: flex;
+  }
+  
+  .square {
+    width: 0.5rem;
+    height: 0.5rem ;
+    background-color: var(--bg);
+    transform: rotate(-140deg);
+  }
+  
+  .rectangle {
+    width: 0.25rem;
+    height: 0.5rem;
+    background-color: var(--bg);
+  }  
+
+i {
+    width: 3rem;
+    height: 3rem;
+    margin: 0 0.2rem;
+    animation-name: confetti;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: calc(70s / var(--speed));
+}
+
+@keyframes confetti {
+    0% {
+        transform: translateY(-100vh);
+    }
+
+    100% {
+        transform: translateY(100vh);
+    }
+}
