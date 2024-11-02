@@ -9,12 +9,14 @@ if (!isset($_SESSION['word_count'])) {
     $_SESSION['word_count'] = 1; // Start from word 1
 }
 
-// Define word lists by difficulty level
-$words = [
-    'easy' => ['apple', 'tree', 'book', 'sun', 'moon', 'star'],
-    'medium' => ['planet', 'garden', 'forest', 'butterfly', 'castle', 'ocean'],
-    'hard' => ['psychology', 'development', 'architecture', 'vocabulary', 'laboratory', 'mathematics']
-];
+if (!isset($_SESSION['words'])) {
+    // Define word lists by difficulty level and store in session
+    $_SESSION['words'] = [
+        'easy' => ['apple', 'tree', 'book', 'sun', 'moon', 'star'],
+        'medium' => ['planet', 'garden', 'forest', 'butterfly', 'castle', 'ocean'],
+        'hard' => ['psychology', 'development', 'architecture', 'vocabulary', 'laboratory', 'mathematics']
+    ];
+}
 
 // Levels
 $levels = ['easy', 'medium', 'hard'];
@@ -71,11 +73,14 @@ function allLettersGuessed($word, $guessed) {
 
 // start a new game or level
 function startNewGame($words) {
-    global $levels;
+    $levels;
     $level = $_SESSION['level'];
-    $_SESSION['word'] = $words[$level][array_rand($words[$level])];
+    $randomKey = array_rand($_SESSION['words'][$level]);
+    $_SESSION['word'] = $_SESSION['words'][$level][$randomKey];
     $_SESSION['guessed'] = [];
     $_SESSION['lives'] = 6;
+    unset($_SESSION['words'][$level][$randomKey]);
+    $_SESSION['words'][$level] = array_values($_SESSION['words'][$level]); // Reindex array
     unset($_SESSION['load_new_word']); // Clear the flag
 }
 
@@ -83,18 +88,13 @@ function startNewGame($words) {
 function advanceLevel($levels, $words) {
     global $levels;
     $_SESSION['word_count']++;
-
+        
     // Check if 6 words are completed within this level
     if ($_SESSION['word_count'] > 6) {
         $currentLevelIndex = array_search($_SESSION['level'], $levels);
-        
-       // Check if 6 words are completed within this level
-    if ($_SESSION['word_count'] > 6) {
-    // Game is won after completing the sixth word on the current level
-         header("Location: gameover.php?result=win");
+        // Game is won after completing the sixth word on the current level
+        header("Location: gameover.php?result=win");
         exit;
-}
-
     }
     
     $_SESSION['load_new_word'] = true; // Set flag to load new word on the next page load
