@@ -64,11 +64,9 @@ session_destroy();
     }
 	elseif($result === "lose") {
 	print "
- <div class = 'main'>
 	<div class = 'Losetxt'>
 	<img src = 'img/Defeat text.png'>
 	</div>
- </div>
 	<audio autoplay>
 	 <source src='sound/Death_sound.mp3' type='audio/mpeg'>
 	</audio>
