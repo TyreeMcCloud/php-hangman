@@ -57,7 +57,7 @@ session_destroy();
             <i style='--speed: 47 ; --bg: paleturquoise' class='square'></i>
             <i style='--speed: 31 ; --bg: plum' class='square'></i>
         </div>
-	<audio controls autoplay>
+	<audio autoplay>
 	<source src='sound/victory.mp3' type='audio/mpeg'>
 	</audio>
 	";
@@ -69,7 +69,7 @@ session_destroy();
 	<img src = 'img/Defeat text.png'>
 	</div>
  </div>
-	<audio controls autoplay>
+	<audio autoplay>
 	 <source src='sound/Death_sound.mp3' type='audio/mpeg'>
 	</audio>
 	";
