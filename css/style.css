@@ -94,7 +94,13 @@ div.bottom {
     right: 0;
     display: flex;
   }
-  
+
+  .Losetxt{
+	  position: fixed;
+	  display: flex;
+	  right: 0;
+	  animation: fadeIn 8s;
+  }
   .square {
     width: 0.5rem;
     height: 0.5rem ;
@@ -126,4 +132,8 @@ i {
     100% {
         transform: translateY(100vh);
     }
+}
+@keyframes fadeIn {
+		0% { opacity: 0; }
+	  100% { opacity: 1; }
 }
