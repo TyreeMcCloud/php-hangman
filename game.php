@@ -12,9 +12,9 @@ if (!isset($_SESSION['word_count'])) {
 if (!isset($_SESSION['words'])) {
     // Define word lists by difficulty level and store in session
     $_SESSION['words'] = [
-        'easy' => ['apple', 'tree', 'book', 'sun', 'moon', 'star'],
-        'medium' => ['planet', 'garden', 'forest', 'butterfly', 'castle', 'ocean'],
-        'hard' => ['psychology', 'development', 'architecture', 'vocabulary', 'laboratory', 'mathematics']
+        'easy' => ['apple', 'tree', 'book', 'sun', 'moon', 'star', 'math', 'meet'],
+        'medium' => ['planet', 'garden', 'forest', 'butterfly', 'castle', 'ocean', 'persona'],
+        'hard' => ['psychology', 'development', 'architecture', 'vocabulary', 'laboratory', 'mathematics', 'cosmology']
     ];
 }
 
