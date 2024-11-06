@@ -107,12 +107,12 @@ div.bottom {
     background-color: var(--bg);
     transform: rotate(-140deg);
   }
-  
+
   .rectangle {
     width: 0.25rem;
     height: 0.5rem;
     background-color: var(--bg);
-  }  
+  }
 
 i {
     width: 3rem;
@@ -136,4 +136,13 @@ i {
 @keyframes fadeIn {
 		0% { opacity: 0; }
 	  100% { opacity: 1; }
+}
+
+.hangman-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
