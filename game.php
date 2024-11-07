@@ -106,7 +106,7 @@ function advanceLevel($levels, $words) {
 // Prepare word display with guessed letters
 $displayWord = '';
 foreach (str_split($word) as $letter) {
-    $displayWord .= in_array($letter, $guessed) ? $letter : '_';
+    $displayWord .= in_array($letter, $guessed) ? $letter : ' _ ';
 }
 
 // Calculate Hangman image based on lives remaining
