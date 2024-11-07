@@ -38,6 +38,9 @@ div.main-game {
     margin-right: auto;
     border-radius: 40px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 div.bottom {
@@ -68,6 +71,7 @@ div.bottom {
     border: solid 1px black;
     border-radius: 12.5px;
     text-align: center;
+    z-index: 10;
 }
 
 .home-image {
@@ -76,8 +80,8 @@ div.bottom {
 }
 
 .hangman-image {
-    max-width: 50%;
-    max-height: 50%;
+    max-width: 70%;
+    max-height: 60%;
     width: auto;
     height: auto;
     object-fit: contain;
@@ -88,7 +92,7 @@ div.bottom {
     left: 0;
     display: flex;
   }
-  
+
   .confetti-right {
     position: fixed;
     right: 0;
@@ -96,10 +100,15 @@ div.bottom {
   }
 
   .Losetxt{
-	  position: fixed;
-	  display: flex;
-	  right: 0;
-	  animation: fadeIn 8s;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: auto;
+    right: 0;
+    left: 0;
+    bottom: 0;
+	animation: fadeIn 8s;
   }
   .square {
     width: 0.5rem;
@@ -136,4 +145,72 @@ i {
 @keyframes fadeIn {
 		0% { opacity: 0; }
 	  100% { opacity: 1; }
+}
+
+/* Word and Lives */
+.word {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.lives {
+    font-size: 1.2em;
+    color: #ff4d4d;
+    margin-bottom: 15px;
+}
+
+/* Error Message */
+.error {
+    color: #ff4d4d;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Guess Form */
+.guess-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.guess-form input[type="text"] {
+    font-size: 1.2em;
+    padding: 5px;
+    width: 50px;
+    text-align: center;
+    border: solid 2px #000000;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.guess-form input[type="text"]:focus {
+    border-color: #000000;
+}
+
+.guess-form button {
+    font-size: 1.2em;
+    padding: 5px 15px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.guess-form button:hover {
+    background-color: #0056b3;
+}
+
+
+.guessed-letters {
+    font-size: 1em;
+    color: #555;
 }

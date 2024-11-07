@@ -125,23 +125,24 @@ $hangmanStage = 6 - $lives;
     </div>
 
     <div class="main-game">
-        <h1>Hangman</h1>
-        <div class="hangman-image">
-            <img src="img/hangman<?= $hangmanStage ?>.png" alt="Hangman Stage <?= $hangmanStage ?>" class="hangman-image">
-        </div>
-        <p>Word: <?= $displayWord ?></p>
-        <p>Lives remaining: <?= $lives ?></p>
-        
-        <?php if ($duplicateGuessMessage): ?>
-            <p class="error"><?= $duplicateGuessMessage ?></p>
-        <?php endif; ?>
-        
-        <form method="post" action="game.php">
-            <input type="text" name="guess" maxlength="1" required>
-            <button type="submit">Guess</button>
-        </form>
-        <p>Guessed letters: <?= implode(', ', $guessed) ?></p>
+    <h1>Hangman</h1>
+    <div class="hangman-image">
+        <img src="img/hangman<?= $hangmanStage ?>.png" alt="Hangman Stage <?= $hangmanStage ?>" class="hangman-image">
     </div>
+    <p class="word">Word: <?= $displayWord ?></p>
+    <p class="lives">Lives remaining: <?= $lives ?></p>
+    
+    <?php if ($duplicateGuessMessage): ?>
+        <p class="error"><?= $duplicateGuessMessage ?></p>
+    <?php endif; ?>
+    
+    <form method="post" action="game.php" class="guess-form">
+        <input type="text" name="guess" maxlength="1" required placeholder="Enter a letter">
+        <button type="submit">Guess</button>
+    </form>
+    <p class="guessed-letters">Guessed letters: <?= implode(', ', $guessed) ?></p>
+    </div>
+
 
     <div class="bottom">
         <a class="home-button" href="homepage.php">
