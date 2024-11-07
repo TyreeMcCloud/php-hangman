@@ -84,11 +84,11 @@ function startNewGame($words) {
     unset($_SESSION['load_new_word']); // Clear the flag
 }
 
-// advance within the same level or to the next level
+// advance to the next level
 function advanceLevel($levels, $words) {
     global $levels;
     $_SESSION['word_count']++;
-        
+
     // Check if 6 words are completed within this level
     if ($_SESSION['word_count'] > 6) {
         $currentLevelIndex = array_search($_SESSION['level'], $levels);
@@ -96,7 +96,7 @@ function advanceLevel($levels, $words) {
         header("Location: gameover.php?result=win");
         exit;
     }
-    
+
     $_SESSION['load_new_word'] = true; // Set flag to load new word on the next page load
     header("Location: game.php"); // Reload the page to start the next word automatically
     exit;
